@@ -6,6 +6,7 @@ function printTopics() {
         $newButton.attr('type', 'button');
         $newButton.addClass('btn btn-success btn-sm m-1 gif-button');
         $newButton.text(topic[i]);
+        $newButton.attr('data-offset', 0);
         $('.button-wrapper').append($newButton);
     }
 }
@@ -102,7 +103,8 @@ $(document).ready(function () {
     $(document).on('click', '.gif-button', function () {
         event.preventDefault();
         var search = $(this).text().toLowerCase().replace(/ /g, "+");
-        var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + search + '+the+simpsons&api_key=ykiyEhJLbkeXMzquL1jwCw3xipnA7862&limit=10';
+        var offset = $(this).attr('data-offset');
+        var queryURL = 'https://api.giphy.com/v1/gifs/search?q=' + search + '&api_key=ykiyEhJLbkeXMzquL1jwCw3xipnA7862&limit=10&offset=' + offset ;
         $.ajax({
             url: queryURL,
             method: 'GET'
@@ -111,16 +113,20 @@ $(document).ready(function () {
             for (let i = 0; i < results.length; i++) {
                 let $gifCard = $('<div class="card">'); // New card
                 let $newGif = $('<img>'); //New img inside card
-                let $cardText = $('<div>');
+                let $cardText = $('<div>'); // Hodls Text and buttons
                 $newGif = gifAttributes($newGif, results[i]); //Adds attributes to new gif for still and animate
                 $cardText = appendInfo($cardText, results[i]);
                 $gifCard.addClass('m-1')
                 $gifCard.append($newGif);
                 $gifCard.append($cardText);
-                
                 $('.gif-wrapper').append($gifCard);
             }
         })
+        //Increases offset each time the button is pressed 
+        var tempOffset = $(this).attr('data-offset');
+        tempOffset = parseInt(tempOffset);
+        tempOffset +=10;
+        $(this).attr('data-offset', tempOffset);
     })
     //Animate Listener
     $(document).on('click', '.gif', function () {
