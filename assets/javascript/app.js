@@ -1,4 +1,4 @@
-var topic = ['homer simpson', 'bart simpson', 'lisa simpson', 'marge simpson', 'santas little helper'];
+var topic = ['homer simpson', 'bart simpson', 'lisa simpson', 'marge simpson', 'santas little helper', 'ned flanders', 'milhouse', 'nelson munt' ];
 
 function printTopics() {
     for (let i = 0; i < topic.length; i++) {
@@ -64,10 +64,7 @@ function appendInfo(card, results) {
     card.append('<p>Rating: '+ rating);
     card.append($favButton);
     card.append($downloadButton);
-    
     //card.append('<a href="' + downloadUrl + '" download="gif.gif" target="_blank" class="btn btn-success btn-sm" role="button" aria-disabled="true">DL</a>')
-    
-    
     return card;
 }
 
