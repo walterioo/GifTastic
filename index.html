@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>GifTastic</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="assets/javascript/app.js"></script>
+</head>
+
+<body>
+    <div class="container">
+            <div class="jumbotron mt-1 bg-warning">
+                    <h1 class="display-4">The Simpsons GifTastic Webpage!</h1>
+                    <p class="lead">Search gif's of your favourite Simpson Characters</p>
+                    <hr class="my-2">
+                    <p>You can use My Favourites section to save you favourite searches and gifs you like!</p>
+                  </div>
+
+        <div class="row">
+            <div class="col-md-12 col-sm-12 button-wrapper border rounded"></div>
+        </div>
+        <div class="row mt-1">
+            <!-- Gif Column -->
+            <div class="col-md-9 col-sm-9 border rounded">
+                <div class="row gif-wrapper"></div>
+            </div>
+            <!-- Left side card and submit form -->
+            <div class="col-md-3 col-sm-3 form-wrapper">
+                <div class="card">
+                    <h3 class="card-header">Add a Character</h3>
+                    <div class="card-body">
+                        <div class="input-group">
+                            <input type="text" class="form-control" id='text-form' placeholder="Simpsons Character" aria-label="" aria-describedby="basic-addon1">
+                            <div class="input-group-append">
+                                <button class="btn btn-success" id='submit-button' type="button">Submit</button>
+                            </div>
+                            <button type="button" class="btn btn-success btn-sm btn-block mt-1" id='fav-button'>Add to Favourites</button>
+                            <button type="button" class="btn btn-danger btn-sm btn-block mt-1" id='delete-button'>Delete Favourites</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mt-1">
+                        <h4 class="card-header">My Favourites Characters</h4>
+                        <div class="card-body" id="favourites">
+                            
+                        </div>
+                    </div>
+                    <div class="card mt-1">
+                            <h4 class="card-header">My Favourites Gifs</h4>
+                            <div class="card-body" id="favourite-gif">
+                                
+                            </div>
+                        </div>
+            </div>
+        </div>
+
+
+
+    </div>
+
+</body>
+
+</html>
